@@ -10,16 +10,26 @@ added functionality is planned to test and reject nonhandleable inputs.
 
 '''
 
+import re
+
 '''
 COMING SOON
 a function for testing if input is a positive integer with no non-numeric characters
+
+'''
 def acceptable_number(number):
+    if re.search('.*\D.*', number):
+        print("Sorry, this script only takes digits as input. Ending program. Rerun script again with only digit input.")
+        return(None)
     number=int(number)
     if number<0:
-    print("Sorry, this script does not presently handle negative values.")
-    if number // 10 = 0:
-        print("Input number is already reduced")
-'''
+        print("Sorry, this script does not presently handle negative values. Ending program. Rerun script to try again.")
+        return(None)
+    if number // 10 == 0:
+        print("Input number is already reduced. Ending program. Rerun script to try again.")
+        return(None)
+    return number
+
 
 '''
 The function "reduction" calls this function to perform one round of adding digits together. If
@@ -51,10 +61,10 @@ Output:
     None
 '''
 def reduction(number):
-    temp_number=int(number)
-    while temp_number > 10:
-        temp_number=subreduction(temp_number)
-    print("Your reduced value is " + str(temp_number) + ".")
+    #temp_number=int(number)
+    while number > 10:
+        number=subreduction(number)
+    print("Your reduced value is " + str(number) + ".")
 
 
 '''
@@ -65,6 +75,8 @@ def main():
     \n\nThis script \"reduces\" a number (i.e., adds the digits together until it yields a single digit.)\
     \n\nEnter the number you wish to reduce:")
     print("Your input number is " + str(input_number) + ".")
-    reduction(input_number)
+    accepted_num = acceptable_number(input_number)
+    if accepted_num:
+        reduction(accepted_num)
 
 main()
