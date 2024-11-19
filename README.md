@@ -9,3 +9,8 @@ Shade aside, while the primary goal of this repository is to sharpen and refresh
 Currently available functionalities are in bold while planned functions are plain text.
 * **Reduction** - See reduction.py.
 * Gematria - definitely for Roman alphabet, hopefully for Hebrew alphabet, and maybe with magic squares (e.g., Square of Mars)
+
+## Gematria Sources
+As I am beginning to work on Gematria functionality, I've copy pasted some tables from Wikipedia and thought I would record the sources here.
+* [Classical Latin Gematria](https://en.wikipedia.org/wiki/Gematria#Latin)
+* [Agrippan Gematria](https://en.wikipedia.org/wiki/Numerology#Agrippan_method)
