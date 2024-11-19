@@ -19,12 +19,15 @@ a function for testing if input is a positive integer with no non-numeric charac
 '''
 def acceptable_number(number):
     if re.search('.*\D.*', number):
-        print("Sorry, this script only takes digits as input. Ending program. Rerun script again with only digit input.")
+        print("Sorry, this script only takes digits as input. Ending program. Rerun script again with only digits as input.")
         return(None)
     number=int(number)
+    '''
+    # above regex made these lines irrelevant
     if number<0:
         print("Sorry, this script does not presently handle negative values. Ending program. Rerun script to try again.")
         return(None)
+    '''
     if number // 10 == 0:
         print("Input number is already reduced. Ending program. Rerun script to try again.")
         return(None)
